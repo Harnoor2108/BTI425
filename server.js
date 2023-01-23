@@ -5,7 +5,7 @@
 * (including web sites) or distributed to other students.
 * 
 * Name: Harnoor Kaur Student ID:156624215    Date: 22-January-2023
-* Cyclic Link: _______________________________________________________________
+* Cyclic Link:  https://tame-teal-mackerel-kit.cyclic.app
 *
 ********************************************************************************/
 
@@ -23,7 +23,7 @@ function onHttpStart() {
     console.log("Express http server listening on: " + HTTP_PORT);
   }
 
-  db.initialize("mongodb+srv://Harnoor:ABCD1234@cluster0.w0ezaoo.mongodb.net/sample_mflix?retryWrites=true&w=majority").then(()=>{
+  db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
     app.listen(HTTP_PORT, ()=>{
     console.log(`server listening on: ${HTTP_PORT}`);
     });
